@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        function calculate() {
+            var weight = parseFloat(document.getElementById("weight").value);
+            var height = parseFloat(document.getElementById("height").value);
+
+            var bmi = weight / Math.pow(height, 2);
+
+            if (bmi < 18)
+                document.getElementById('result').innerHTML = bmi.toString() + " - Underweight.";
+            else if (bmi < 25.0)
+                document.getElementById('result').innerHTML = bmi.toString() + " - Normal.";
+            else if (bmi < 30.0)
+                document.getElementById('result').innerHTML = bmi.toString() + " - Overweight.";
+            else
+                document.getElementById('result').innerHTML = bmi.toString() + " - Obese.";
+        }
+
+
+    </script>
+</head>
+<body>
+<form>
+    Weight: <input type="text" id="weight" name="weight">
+    Height: <input type="text" id="height" name="height">
+    <button type="button" onclick="calculate();">Submit</button>
+    <label id="result"></label>
+</form>
+
+</body>
+</html>
